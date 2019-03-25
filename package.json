@@ -1,0 +1,17 @@
+{
+  "name": "blog-post",
+  "version": "1.0.0",
+  "description": "API for blogs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Alejandro Reyes",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^1.18.10",
+    "uuid": "^3.3.2"
+  }
+}
