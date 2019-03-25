@@ -33,7 +33,7 @@ app.get('/blog-posts',(req, res) => {
     res.status(200).json({
         message: "Successfully sent the list of posts",
         status : 200,
-        blogs : postsArray
+        posts : postsArray
     });
 });
 
@@ -125,7 +125,6 @@ app.delete('/blog-posts/:id*?', jsonParser, (req, res) =>{
             {
                 delete postsArray[index];
                 res.status(204).json({
-                    message: `Successfully deleted post with id: ${item.id}`,
                     status: 204
                 });   
             }    
@@ -136,7 +135,6 @@ app.delete('/blog-posts/:id*?', jsonParser, (req, res) =>{
         status: 404
         }).send("Finish");        
     }
-
 });
 
 app.put('/blog-posts/:id*?', jsonParser, (req, res) => {
@@ -155,7 +153,7 @@ app.put('/blog-posts/:id*?', jsonParser, (req, res) => {
         let received_content = req.body.content;
         let received_author = req.body.author;
         let received_publishDate = req.body.publishDate;
-        
+
         if (!received_title && !received_content && !received_author && !received_publishDate)
         {
             res.status(404).json({
@@ -195,10 +193,8 @@ app.put('/blog-posts/:id*?', jsonParser, (req, res) => {
             message: `Post with ID ${received_id} not found`,
             status: 404
             }).send("Finish");   
-        }
-        
+        }        
     }
-
 });
 
 app.listen(8080, () =>{
